@@ -1,0 +1,42 @@
+#+TITLE: Exercises
+
+* Manifolds
+
+1. Examples 
+   - projective space,
+   - grassmanians,
+   - orthogonal group
+   - surfaces of revolution
+   - graphs
+2. sub-manifolds as inverse images of regular points
+   - spheres
+   - surfaces of revolution
+   - graphs
+   - matrix groups like orthogonal group
+3. Matrix and Lie groups
+   - classical groups
+   - complex numbers, quaternions, octonions
+   - left invariant vector fields
+
+* Smooth maps
+
+1. Prove smooth map definition is independent of choice of coordinates
+2. Chain rule for derivatives
+3. Diffeomorphisms, embeddings, immersions
+
+* Vector Bundles
+
+1. Tangent bundle is a vector bundle
+2. Cylinder, \mobius{} strip
+3. Tensor bundles
+4. Transition functions
+
+* Differential Forms
+
+1. Stokes' theorem
+2. de Rham cohomology
+3. \poincare{} lemma (star shaped sets)
+4. Homotopy invariance
+   - \poincare{} lemma via homotopy invariance
+5. Mayer-Vetoris sequence
+4. cohomology of the sphere

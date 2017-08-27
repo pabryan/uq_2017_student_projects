@@ -1,0 +1,22 @@
+#+TITLE: Rhuaidi Burke Project
+
+* The Plan
+
+1. Gauss-Bonnet and \poincare-Hopf in two dimensions
+   - In particular, we obtain the two-dimensional Hairy Ball theorem
+
+2. \poincare-Hopf and Euler characteristic to show that
+   - odd-dimensional manifolds have a non-vanishing vector field
+   - non-vanishing Euler characteristic implies all vector fields have a zero
+
+3. de Rham cohomology to compute Euler characteristic \(\chi\)
+   - \(\sphere^{2n}\) has \(\chi = 2\)
+   - hence the Hairy-ball theorem follws
+
+4. "number" structure on the complex numbers, quaternions and octonions
+   - Show that \(\sphere^1, \sphere^3, \sphere^7\) have trivial tangent bundles
+
+5. Related "number" structure and Hopf fibration
+
+6. Discuss Adams' results that in particular show all other odd dimensional spheres do not have trivial tangent bundle
+

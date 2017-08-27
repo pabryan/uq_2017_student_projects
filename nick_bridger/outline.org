@@ -1,0 +1,10 @@
+#+TITLE: Nick Bridger Project
+
+* The Plan
+
+1. de Rham theorem
+
+2. Hodge theorem
+
+3. Applications?
+
