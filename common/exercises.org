@@ -1,6 +1,10 @@
 #+TITLE: Exercises
+#+AUTHOR:
+#+OPTIONS: toc:nil date:nil
 
 * Manifolds
+
+There are many examples of smooth manifolds. You should work through some exercises relating to these categories. The references you have will cover these problems.
 
 1. Examples 
    - projective space,
@@ -8,28 +12,115 @@
    - orthogonal group
    - surfaces of revolution
    - graphs
+
 2. sub-manifolds as inverse images of regular points
    - spheres
    - surfaces of revolution
    - graphs
    - matrix groups like orthogonal group
-3. Matrix and Lie groups
-   - classical groups
-   - complex numbers, quaternions, octonions
-   - left invariant vector fields
+
+* Germs and Partitions of Unity
+* Tangent Bundle
+
+A smooth curve $\gamma$ in $M$ is a map $\gamma : I \to M$ for $I \subseteq \RR$ an interval such that for any chart $\varphi : U \subseteq M \to V \subseteq \RR^n$, the composition $\varphi \circ \gamma : I \to \RR^n$ is smooth.
+
+A local derivation, \(v \in \mathcal{D}_x\) is an \(\RR\)-linear map
+\[
+v : C^{\infty}(M) \to \RR
+\]
+such that \(v(fg) = f(x) v(g) + g(x) v(f)\). For example, $\partial_x|_{x=x_0}$ where $x_0 \in \RR^n$.
+
+1. Show that the following definitions of the tangent space $T_x M$ at $x \in M$ are equivalent.
+
+   a. \(T_x M = \{[v] | v : I \to M, 0 \in I, v(0) = x\}\) where
+      \[
+      [v] = \{w : J \to M | 0 \in J, w(0) = v(0), \forall \varphi (\varphi \circ w)'(0) = (\varphi \circ v)'(0)\}
+      \]
+      denotes the equivalence class of curves $v$ in $M$ through $x$ with the same derivative at $x$:
+
+      $\gamma \sim \sigma$ if $\gamma(0) = \sigma(0) = x$ and $(\varphi \circ \gamma)'(0) = (\varphi \circ \sigma)'(0)$.
+
+   b. $T_x M = \mathcal{D}_x M$.
+
+   c. \(T_x M = \{[\varphi : U \subset M \to \RR^n, Z] : x \in U, Z \in \RR^n\}\) where
+      \[
+      [\varphi : U \to M, Z] = \{[\psi : V \to M, W] : W = d(\psi \circ \varphi^{-1})_{\varphi(x)} \cdot Z\}
+      \]
+      is the equivalence class of vectors in each chart where we take two charts \(\varphi : U \to \RR^n\) and \(\psi : V \to \RR^n\) with \(x \in U, V\) and identify vectors $Z, W$ by the linear map $d (\psi \circ \varphi^{-1})$ at $\varphi(x)$. Draw the picture!
+
+2. Show that $TM$ is a smooth $2n$-dimensional manifold where $M$ is $n$-dimensional.
+
+3. Show that $TM$ is a vector bundle.
 
 * Smooth maps
 
-1. Prove smooth map definition is independent of choice of coordinates
-2. Chain rule for derivatives
-3. Diffeomorphisms, embeddings, immersions
+A map (function) $f : M \to N$ is smooth if for every pair of charts $\phi_M : U_M \subseteq \to V_M \subseteq \RR^m$ and $\phi_N : U_N \subseteq \to V_N \subseteq \RR^n$, the composition,
+\[
+\phi_N \circ f \circ \phi_M^{-1} : \phi_M \circ f^{-1} [U_N] \subset \RR^m \to \RR^n
+\]
+is smooth.
+
+The push forward by \(f\) of a velocity vector is defined as
+\[
+df_x([v]) = [\partial_t|_{t=0} f(\gamma(t))]
+\]
+where \(\gamma(0) = x\) and \(\gamma'(0) = v\).
+
+The push forward by \(f\) of a derivation is defined by
+\[
+(df_x(D)) \varphi = D (\varphi \circ f).
+\]
+
+1. Prove that under the identification of velocity vector and derivations we have
+\[
+df_x(D) \equiv df_x[v] \quad \text{whenever} \quad D \equiv [v].
+\]
+
+2. Formulate a notion of push-forward for the third definition of tangent vectors and prove it's equivalent to the push-forwards of velocity vectors and derivations.
+
+3. Obtain a local coordinate expression for \(df_x\).
+
+2. Chain rule for derivatives. Prove
+   \[
+   d(f \circ g)_x = df_{g(x)} \circ dg_x
+   \]
+   for maps $M \overset{g}{\to} N \overset{f}{\to} P$.
 
 * Vector Bundles
 
-1. Tangent bundle is a vector bundle
-2. Cylinder, \mobius{} strip
-3. Tensor bundles
-4. Transition functions
+1. Prove that the tangent bundle is a vector bundle.
+
+2. Prove that the cylinder and \mobius{} strip are vector bundles over \(\sphere^1\). Moreover, show that the former is trivial while the latter is not.
+
+3. Transition functions
+
+   Let $\pi : E \to M$ be a vector bundle with local trivialisations
+
+   \[
+   \{\varphi_{\alpha} : U_{\alpha} \times \RR^k \to \pi^{-1}[U_{\alpha}]\}.
+   \]
+
+   Define the /local transition functions/,
+   \[
+   \varphi_{\alpha\beta} = \varphi_{\alpha}^{-1} \circ \varphi_{\beta} : U_{\alpha} \cap U_{\beta} \times \RR^k \to U_{\alpha} \cap U_{\beta} \times \RR^k.
+   \]
+
+   a. Show that
+      \[
+      \varphi_{\alpha\beta} (x, V) = (x, \tau_{\alpha\beta} (x) \cdot V)
+      \]
+      where \(\tau_{\alpha\beta} : U_{\alpha} \cap U_{\beta} \to GL_n(\RR)\) is smooth.
+
+   b. Show that \(\tau_{\alpha\beta}\) satisfies the /compatibility conditions/
+
+      1. \(\tau_{\alpha\alpha} = Id\)
+      2. \(\tau_{\alpha\beta} \circ \tau_{\beta\alpha} = Id\)
+      3. \(\tau_{\alpha\beta} \circ \tau_{\beta\gamma} = \tau_{\alpha\gamma}\)
+      4. \(\tau_{\alpha\beta} \circ \tau_{\beta\gamma} \circ \tau_{\gamma\alpha} = Id\)
+	 
+   c. The conditions given are actually redundant. See which may be deduced from the others. In particular, often the first and fourth are the ones given.
+
+4. Tensor Bundles.
 
 * Differential Forms
 
@@ -39,4 +130,4 @@
 4. Homotopy invariance
    - \poincare{} lemma via homotopy invariance
 5. Mayer-Vetoris sequence
-4. cohomology of the sphere
+4. Cohomology of the sphere
