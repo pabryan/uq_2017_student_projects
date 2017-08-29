@@ -48,7 +48,7 @@ such that \(v(fg) = f(x) v(g) + g(x) v(f)\). For example, $\partial_x|_{x=x_0}$ 
       \]
       is the equivalence class of vectors in each chart where we take two charts \(\varphi : U \to \RR^n\) and \(\psi : V \to \RR^n\) with \(x \in U, V\) and identify vectors $Z, W$ by the linear map $d (\psi \circ \varphi^{-1})$ at $\varphi(x)$. Draw the picture!
 
-2. Show that $TM$ is a smooth $2n$-dimensional manifold where $M$ is $n$-dimensional.
+2. Define \(TM = \sqcup_{x\in M} T_x M\). Show that $TM$ is a smooth $2n$-dimensional manifold where $M$ is $n$-dimensional.
 
 3. Show that $TM$ is a vector bundle.
 
