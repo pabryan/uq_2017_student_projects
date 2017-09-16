@@ -38,6 +38,27 @@ show(A)
 show(I)
 show(S)
 ︡839efc09-cb20-4f88-b54b-f1995a89ef57︡{"html":"<div align='center'>$\\displaystyle \\left(\\begin{array}{rrrr}\nx_{1} &amp; x_{2} &amp; x_{3} &amp; x_{4} \\\\\n-x_{2} &amp; x_{1} &amp; -x_{4} &amp; x_{3} \\\\\n-x_{3} &amp; x_{4} &amp; x_{1} &amp; -x_{2} \\\\\n-x_{4} &amp; -x_{3} &amp; x_{2} &amp; x_{1}\n\\end{array}\\right)$</div>"}︡{"html":"<div align='center'>$\\displaystyle \\left(\\begin{array}{rrrr}\nx_{1} &amp; 0 &amp; 0 &amp; 0 \\\\\n0 &amp; x_{1} &amp; 0 &amp; 0 \\\\\n0 &amp; 0 &amp; x_{1} &amp; 0 \\\\\n0 &amp; 0 &amp; 0 &amp; x_{1}\n\\end{array}\\right)$</div>"}︡{"html":"<div align='center'>$\\displaystyle \\left(\\begin{array}{rrrr}\n0 &amp; x_{2} &amp; x_{3} &amp; x_{4} \\\\\n-x_{2} &amp; 0 &amp; -x_{4} &amp; x_{3} \\\\\n-x_{3} &amp; x_{4} &amp; 0 &amp; -x_{2} \\\\\n-x_{4} &amp; -x_{3} &amp; x_{2} &amp; 0\n\\end{array}\\right)$</div>"}︡{"done":true}︡
+︠ca19793b-bb63-4f1e-9567-54e6f44fabb2︠
+n = 4
+
+X = list(var('x_%d' % i) for i in range(1,2*n+1))
+
+# Not needed when computing determinants, but I was thinking of using this to show the linear system A C = 0 has only the trivial solution
+C = list(var('c_%d' % i) for i in range(2*n))
+
+N = vector(X)
+
+# Create our frame
+V = [N]
+for i in range(1, 2*n):
+    V += [vector(sum([[-X[2*i+1], X[2*i]] for i in range(n)], []))] # using sum like this is inefficient for large n - use itertools instead!
+
+
+A = matrix([V[i] for i in range(2*n)])
+
+show(A)
+A.det()
+︡dbf25858-5b4d-4764-ada7-5b65acf1d0d2︡{"html":"<div align='center'>$\\displaystyle \\left(\\begin{array}{rrrrrrrr}\nx_{1} &amp; x_{2} &amp; x_{3} &amp; x_{4} &amp; x_{5} &amp; x_{6} &amp; x_{7} &amp; x_{8} \\\\\n-x_{2} &amp; x_{1} &amp; -x_{4} &amp; x_{3} &amp; -x_{6} &amp; x_{5} &amp; -x_{8} &amp; x_{7} \\\\\n-x_{2} &amp; x_{1} &amp; -x_{4} &amp; x_{3} &amp; -x_{6} &amp; x_{5} &amp; -x_{8} &amp; x_{7} \\\\\n-x_{2} &amp; x_{1} &amp; -x_{4} &amp; x_{3} &amp; -x_{6} &amp; x_{5} &amp; -x_{8} &amp; x_{7} \\\\\n-x_{2} &amp; x_{1} &amp; -x_{4} &amp; x_{3} &amp; -x_{6} &amp; x_{5} &amp; -x_{8} &amp; x_{7} \\\\\n-x_{2} &amp; x_{1} &amp; -x_{4} &amp; x_{3} &amp; -x_{6} &amp; x_{5} &amp; -x_{8} &amp; x_{7} \\\\\n-x_{2} &amp; x_{1} &amp; -x_{4} &amp; x_{3} &amp; -x_{6} &amp; x_{5} &amp; -x_{8} &amp; x_{7} \\\\\n-x_{2} &amp; x_{1} &amp; -x_{4} &amp; x_{3} &amp; -x_{6} &amp; x_{5} &amp; -x_{8} &amp; x_{7}\n\\end{array}\\right)$</div>"}︡{"stdout":"0"}︡{"stdout":"\n"}︡{"done":true}︡
 
 
 
